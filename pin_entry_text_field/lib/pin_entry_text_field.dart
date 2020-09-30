@@ -11,6 +11,7 @@ class PinEntryTextField extends StatefulWidget {
   final num fontSize;
   final bool isTextObscure;
   final bool showFieldAsBox;
+  final bool autofocus;
   final cursorColor;  // Leaving the data type dynamic for adding Color or Material Color
   final boxColor;
   final textColor;
@@ -26,6 +27,7 @@ class PinEntryTextField extends StatefulWidget {
         this.cursorColor: Colors.blue,  // Adding a Material Color so that if the user want black, it get accepted too
         this.boxColor: Colors.blue,
         this.textColor: Colors.blue,
+        this.autofocus
 
       })
       : assert(fields > 0);
@@ -114,7 +116,7 @@ class PinEntryTextFieldState extends State<PinEntryTextField> {
         textAlign: TextAlign.center,
         cursorColor: widget.cursorColor,
         maxLength: 1,
-        autofocus: autofocus,
+        autofocus: widget.autofocus,
         style: TextStyle(
             fontWeight: FontWeight.bold,
             color: widget.textColor,
